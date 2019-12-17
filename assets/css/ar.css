@@ -1,0 +1,17 @@
+/*
+Copyright(c) Live2D Inc. All rights reserved.
+
+Use of this source code is governed by the MIT License.
+ */
+
+canvas#main-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+video {
+  text-align: center;
+  object-fit: cover;
+}

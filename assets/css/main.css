@@ -1,0 +1,22 @@
+/*
+Copyright(c) Live2D Inc. All rights reserved.
+
+Use of this source code is governed by the MIT License.
+ */
+
+@import url("./ar.css");
+@import url("./debug.css");
+
+html, body {
+  overflow: hidden;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+p, span, ul {
+  margin: 0;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}

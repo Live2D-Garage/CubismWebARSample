@@ -1,0 +1,37 @@
+/*
+Copyright(c) Live2D Inc. All rights reserved.
+
+Use of this source code is governed by the MIT License.
+ */
+
+#debug-info {
+  position: absolute;
+}
+
+#fps-text, #console-text, #matrix-text {
+  color: white;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+  font-size: 12px;
+  list-style: none;
+  padding-left: 0;
+}
+
+li.warn {
+  text-shadow:
+  -1px -1px 0 orange,
+   1px -1px 0 orange,
+  -1px  1px 0 orange,
+   1px  1px 0 orange;
+}
+
+li.error {
+  text-shadow:
+  -1px -1px 0 red,
+   1px -1px 0 red,
+  -1px  1px 0 red,
+   1px  1px 0 red;
+}

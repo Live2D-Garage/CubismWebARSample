@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "newLine": "LF",
+    "removeComments": true,
+    "moduleResolution": "node",
+    "downlevelIteration": true,
+    "target": "es5",
+    "module": "esnext"
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

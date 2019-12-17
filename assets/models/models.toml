@@ -1,0 +1,9 @@
+[[models]]
+name = "Rice"
+scale = 4
+[models.canvasOffset]
+x = -0.23
+[models.position]
+y = -0.35
+[models.hitInfo]
+HitAreaBody = "TapBody"

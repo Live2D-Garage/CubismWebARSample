@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+set -ue
+
+NODE_VERION=v12.13.1
+CUBISM_SDK_VERSION=4-beta.2
+
+NODE_DL_URL=https://nodejs.org/dist/$NODE_VERION/node-$NODE_VERION-darwin-x64.tar.gz
+SDK_DL_URL=https://cubism.live2d.com/sdk-web/bin/CubismSdkForWeb-$CUBISM_SDK_VERSION.zip
+
+cd $(dirname $0)/../../
+
+rm -rf .temp .node CubismWebSamples
+mkdir -p .temp .node CubismWebSamples
+
+echo '# Installing Node.js...\n'
+curl -fsSL -o ./.temp/node.tar.gz $NODE_DL_URL
+tar -zxf ./.temp/node.tar.gz -C ./.temp/
+mv -f ./.temp/node-*/* ./.node/
+
+echo '# Installing Cubism SDK...\n'
+curl -fsSL -o ./.temp/sdk.zip $SDK_DL_URL
+unzip -oq ./.temp/sdk.zip -d ./.temp/
+mv -f ./.temp/Cubism*/* ./CubismWebSamples/
+
+rm -rf ./.temp/
+
+echo '# Install dependency packages\n'
+export PATH=`pwd`/.node/bin:$PATH
+npm ci
+
+echo '\n# Script completed successfully\n'
