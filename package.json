@@ -29,7 +29,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "three": "^0.111.0",
     "toml": "^3.0.0"
   },
