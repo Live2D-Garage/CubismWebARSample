@@ -7,6 +7,8 @@ This application runs on a web browser. This makes it easy to enjoy AR content i
 You can display your Live2D models just by replacing model data, and you can use your own AR marker.
 You can promote your Live2D models by embedding AR marker in business cards or posters.
 
+Additionally, in the two-shot mode, which does not use markers, you can take pictures with the Live2D model.
+
 [Live2D Cubism SDK for Web]: https://www.live2d.com/download/cubism-sdk/
 [AR.js]: https://github.com/jeromeetienne/AR.js/
 [Live2D Cubism Editor]: https://www.live2d.com/

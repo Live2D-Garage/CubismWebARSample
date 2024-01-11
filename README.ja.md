@@ -8,6 +8,8 @@ Web ブラウザ上で動作するため、アプリケーションのインス�
 モデルデータを差し替えるだけでお手持ちの Live2D モデルを表示することができます、またオリジナルの AR マーカーを利用することも可能です。
 AR マーカーを名刺やポスターなどに埋め込むことで、Live2D モデルのプロモーションを行なうことができます。
 
+さらに、マーカーを利用しないツーショットモードも用意しており、Live2D モデルと一緒に写真を撮ることができます。
+
 [Live2D Cubism SDK for Web]: https://www.live2d.com/download/cubism-sdk/
 [AR.js]: https://github.com/jeromeetienne/AR.js/
 [Live2D Cubism Editor]: https://www.live2d.com/

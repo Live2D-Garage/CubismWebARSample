@@ -7,25 +7,25 @@
 /* eslint max-classes-per-file: "off" */
 declare namespace THREEx {
   class ArToolkitContext {
-    constructor(parameters: ArToolkitContextParameters)
+    constructor(parameters: ArToolkitContextParameters);
 
-    baseURL: string
+    baseURL: string;
 
-    arController: any
+    arController: any;
 
-    init: (callback: () => void) => void
+    init: (callback: () => void) => void;
 
-    getProjectionMatrix: () => THREE.Matrix4
+    getProjectionMatrix: () => THREE.Matrix4;
 
-    update: (domElement: HTMLElement) => void
+    update: (domElement: HTMLElement) => void;
   }
   interface ArToolkitContextParameters {
     // AR backend - ['artoolkit', 'aruco', 'tango']
-    trackingBackend?: 'artoolkit' | 'aruco' | 'tango'
+    trackingBackend?: 'artoolkit' | 'aruco' | 'tango';
     // debug - true if one should display artoolkit debug canvas, false otherwise
-    debug?: boolean
+    debug?: boolean;
     // the mode of detection - ['color', 'color_and_matrix', 'mono', 'mono_and_matrix']
-    detectionMode?: 'color' | 'color_and_matrix' | 'mono' | 'mono_and_matrix'
+    detectionMode?: 'color' | 'color_and_matrix' | 'mono' | 'mono_and_matrix';
     // type of matrix code - valid iif detectionMode end with 'matrix' - [3x3, 3x3_HAMMING63, 3x3_PARITY65, 4x4, 4x4_BCH_13_9_3, 4x4_BCH_13_5_5]
     matrixCodeType?:
       | '3x3'
@@ -33,19 +33,19 @@ declare namespace THREEx {
       | '3x3_PARITY65'
       | '4x4'
       | '4x4_BCH_13_9_3'
-      | '4x4_BCH_13_5_5'
+      | '4x4_BCH_13_5_5';
     // url of the camera parameters
-    cameraParametersUrl?: string
+    cameraParametersUrl?: string;
     // tune the maximum rate of pose detection in the source image
-    maxDetectionRate?: number
+    maxDetectionRate?: number;
     // resolution of at which we detect pose in the source image
-    canvasWidth?: number
-    canvasHeight?: number
+    canvasWidth?: number;
+    canvasHeight?: number;
     // the patternRatio inside the artoolkit marker - artoolkit only
-    patternRatio?: number
+    patternRatio?: number;
     // enable image smoothing or not for canvas copy - default to true
     // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled
-    imageSmoothingEnabled?: boolean
+    imageSmoothingEnabled?: boolean;
   }
 
   class ArMarkerControls {
@@ -53,56 +53,56 @@ declare namespace THREEx {
       context: ArToolkitContext,
       object3d: THREE.Object3D,
       parameters: ArMarkerControlsParameters
-    )
+    );
   }
   interface ArMarkerControlsParameters {
     // size of the marker in meter
-    size?: number
+    size?: number;
     // type of marker - ['pattern', 'barcode', 'unknown' ]
-    type?: 'pattern' | 'barcode' | 'unknown'
+    type?: 'pattern' | 'barcode' | 'unknown';
     // url of the pattern - IIF type='pattern'
-    patternUrl?: string
+    patternUrl?: string;
     // value of the barcode - IIF type='barcode'
-    barcodeValue?: number
+    barcodeValue?: number;
     // change matrix mode - [modelViewMatrix, cameraTransformMatrix]
-    changeMatrixMode?: 'modelViewMatrix' | 'cameraTransformMatrix'
+    changeMatrixMode?: 'modelViewMatrix' | 'cameraTransformMatrix';
     // minimal confidence in the marke recognition - between [0, 1] - default to 1
-    minConfidence?: number
+    minConfidence?: number;
     // turn on/off camera smoothing
-    smooth?: boolean
+    smooth?: boolean;
     // number of matrices to smooth tracking over, more = smoother but slower follow
-    smoothCount?: number
+    smoothCount?: number;
     // distance tolerance for smoothing, if smoothThreshold # of matrices are under tolerance, tracking will stay still
-    smoothTolerance?: number
+    smoothTolerance?: number;
     // threshold for smoothing, will keep still unless enough matrices are over tolerance
-    smoothThreshold?: number
+    smoothThreshold?: number;
   }
 
   class ArToolkitSource {
-    constructor(parameters: ArToolkitSourceParameters)
+    constructor(parameters: ArToolkitSourceParameters);
 
-    ready: boolean
+    ready: boolean;
 
-    domElement: HTMLElement
+    domElement: HTMLElement;
 
-    parameters: ArToolkitSourceParameters
+    parameters: ArToolkitSourceParameters;
 
-    init: (onReady?: () => void, onError?: () => void) => void
+    init: (onReady?: () => void, onError?: () => void) => void;
 
-    onResize: () => void
+    onResize: () => void;
   }
   interface ArToolkitSourceParameters {
     // type of source - ['webcam', 'image', 'video']
-    sourceType?: 'webcam' | 'image' | 'video'
+    sourceType?: 'webcam' | 'image' | 'video';
     // url of the source - valid if sourceType = image|video
-    sourceUrl?: string
+    sourceUrl?: string;
     // Device id of the camera to use (optional)
-    deviceId?: string
+    deviceId?: string;
     // resolution of at which we initialize in the source image
-    sourceWidth?: number
-    sourceHeight?: number
+    sourceWidth?: number;
+    sourceHeight?: number;
     // resolution displayed for the source
-    displayWidth?: number
-    displayHeight?: number
+    displayWidth?: number;
+    displayHeight?: number;
   }
 }
