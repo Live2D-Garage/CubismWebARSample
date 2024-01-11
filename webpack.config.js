@@ -1,4 +1,18 @@
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 const path = require('path')
+
+const options = {
+  extensions: [`ts`],
+  exclude: [
+    `/node_modules/`,
+    `/CubismWebSamples/`,
+  ],
+  cache: true,
+  formatter: 'codeframe',
+  fix: false,
+  useEslintrc: true,
+}
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
@@ -11,19 +25,9 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js']
   },
+  //plugins: [new ESLintPlugin(options)],
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.ts$/,
-        exclude: [/CubismWebSamples/, /node_modules/],
-        loader: 'eslint-loader',
-        options: {
-          cache: true,
-          formatter: 'codeframe',
-          fix: true
-        }
-      },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
@@ -31,14 +35,15 @@ module.exports = {
       }
     ]
   },
+  devtool: 'inline-source-map',
   devServer: {
-    watchContentBase: true,
-    inline: true,
+    static: {
+      directory: path.resolve(__dirname, "./"),
+    },
     hot: true,
     open: true,
     https: true,
-    host: '0.0.0.0',
+    host: 'localhost',
     compress: true,
-    useLocalIp: true
   }
 }
