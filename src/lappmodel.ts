@@ -45,6 +45,7 @@ import CubismDefaultParameterId = cubismdefaultparameterid;
 import CubismMotionManager = cubismmotionmanager.CubismMotionManager;
 import { CubismModelMatrix } from '../CubismWebSamples/Framework/src/math/cubismmodelmatrix';
 import { MOUSE } from 'three';
+import lappdelegate from './lappdelegate';
 
 /**
  * Implementation class of CubismUserModel
@@ -741,7 +742,7 @@ export default class LAppModel extends CubismUserModel {
       return;
     }
 
-    if (this.twoshot == true) {
+    if (lappdelegate.twoshot == true) {
       const _modelMatrix: CubismModelMatrix = new CubismModelMatrix(
         this._model.getCanvasWidth(),
         this._model.getCanvasHeight()
@@ -778,31 +779,6 @@ export default class LAppModel extends CubismUserModel {
       this.getRenderer().setMvpMatrix(_projectionMatrix);
       this.getRenderer().setRenderState(frameBuffer, viewport);
       this.getRenderer().drawModel();
-
-      /*
-            if (aspectRatio > 9 / 16) {
-              _projectionMatrix.scale(
-                1 * this.modelsize,
-                (width / height) * this.modelsize
-              );
-              _projectionMatrix.translate(this.modelx, -1 * this.modely);
-              _projectionMatrix.multiplyByMatrix(_rotMatrix);
-              _projectionMatrix.multiplyByMatrix(_offsetMatrix);
-              this.getRenderer().setMvpMatrix(_projectionMatrix);
-              this.getRenderer().setRenderState(frameBuffer, viewport);
-              this.getRenderer().drawModel();
-            } else {
-              _projectionMatrix.scale(
-                (width / height) * this.modelsize, 1 * this.modelsize
-              );
-              _projectionMatrix.translate(this.modelx, -1 * this.modely);
-              _projectionMatrix.multiplyByMatrix(_rotMatrix);
-              _projectionMatrix.multiplyByMatrix(_offsetMatrix);
-              this.getRenderer().setMvpMatrix(_projectionMatrix);
-              this.getRenderer().setRenderState(frameBuffer, viewport);
-              this.getRenderer().drawModel();
-            }
-            */
     } else {
       matrix.multiplyByMatrix(this._modelMatrix);
       this.getRenderer().setMvpMatrix(matrix);

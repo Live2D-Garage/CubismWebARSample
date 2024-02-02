@@ -513,9 +513,6 @@ class LAppDelegate {
           this.addedModelNumber++;
           let addedObj = sprite.getObject3D();
           this.addedObj[this.addedModelNumber - 1] = addedObj;
-          if (this.addedModelNumber != 1) {
-            //this.addedObj[this.addedModelNumber - 1].visible = false;
-          }
         }
       });
     }

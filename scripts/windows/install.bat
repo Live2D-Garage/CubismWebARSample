@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set NODE_VERION=v18.7.0
+set NODE_VERION=v20.11.0
 set CUBISM_SDK_VERSION=4-r.5-beta.5
 
 set NODE_DL_URL=https://nodejs.org/dist/%NODE_VERION%/node-%NODE_VERION%-win-x64.zip

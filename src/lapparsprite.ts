@@ -17,6 +17,7 @@ import { ModelOption } from './modeloption';
 
 import CubismMatrix44 = cubismMatrix44.CubismMatrix44;
 import CubismModelSettingJson = cubismmodelsettingjson.CubismModelSettingJson;
+import lappdelegate from './lappdelegate';
 
 enum ARMarkerEvent {
   Detect = 'Detect',
@@ -40,7 +41,6 @@ interface HitArea {
  * Sprite for drawing model displayed in the AR space
  */
 export default class LAppARSprite {
-  public twoshot: boolean;
   constructor(private _modelOption: ModelOption) {
     // Generate transparent mesh and let the model draw when drawing.
     this._initializeMesh();
@@ -196,23 +196,12 @@ export default class LAppARSprite {
 
     LAppPal.printLog(`Load model: ${this._modelOption.name}`);
     this._model = new LAppModel();
-
-    if (this._modelOption.enablebreathing) {
-      this._model.updateBreath = true;
-    } else {
-      this._model.updateBreath = false;
-    }
-
+    this._model.updateBreath = this._modelOption.enablebreathing;
     this._model.moveoffset = this._modelOption.canvasOffset.x;
     if (LAppDelegate.twoshot) {
-      this._model.twoshot = true;
-      this.twoshot = true;
       this._model.CanvasOffsetX = this._modelOption.canvasOffset.x;
       this._model.CanvasOffsetY = this._modelOption.canvasOffset.y;
-    } else {
-      this._model.twoshot = false;
-      this.twoshot = false;
-    }
+    } 
 
     // Use the setTimeout method to execute the process with a delay.
     setTimeout(async () => {
@@ -402,7 +391,7 @@ export default class LAppARSprite {
   private doUpdate(event: ARMarkerEvent) {
     switch (this._state) {
       case ARSpriteState.Hidden:
-        if (this.twoshot === false) {
+        if (lappdelegate.twoshot === false) {
           if (event === ARMarkerEvent.Detect) {
             this.fireTransition(ARSpriteState.Showing);
             this.doUpdate(event);
@@ -414,8 +403,8 @@ export default class LAppARSprite {
               this.showModel();
               this._renderingStartDelay =
                 LAppDefine.RENDERING_DELAY_AFTER_LOADING_MS;
-              this._renderingStartTime = undefined;
-              this._delayFilter = undefined;
+              this._renderingStartTime = null;
+              this._delayFilter = null;
             });
           }
         }
@@ -426,10 +415,10 @@ export default class LAppARSprite {
           const elapsed = Date.now() - this._lastUpdatedTime;
           if (elapsed >= LAppDefine.LOADING_DELAY_AFTER_RECOGNIZING_MS) {
             this.fireTransition(ARSpriteState.Shown, () => {
-              if (this.twoshot === false) {
+              if (lappdelegate.twoshot === false) {
                 this.showModel();
               }
-              else{
+              else {
                 setTimeout(async () => {
                   this.showModel();
                 }, 1000);
@@ -441,14 +430,14 @@ export default class LAppARSprite {
             });
           }
         } else if (event === ARMarkerEvent.Lost) {
-          if (this.twoshot == false) {
+          if (lappdelegate.twoshot == false) {
             this.fireTransition(ARSpriteState.Hidden);
           }
         }
         break;
       case ARSpriteState.Shown:
         if (event === ARMarkerEvent.Lost) {
-          if (this.twoshot == false) {
+          if (lappdelegate.twoshot == false) {
             this.fireTransition(ARSpriteState.Hiding);
             this.doUpdate(event);
           }
@@ -465,7 +454,7 @@ export default class LAppARSprite {
         } else if (event === ARMarkerEvent.Lost) {
           const elapsed = Date.now() - this._lastUpdatedTime;
           if (elapsed >= LAppDefine.RELEASE_DELAY_AFTER_DERECOGNIZING_MS) {
-            if (this.twoshot == false) {
+            if (lappdelegate.twoshot == false) {
               this.fireTransition(ARSpriteState.Hidden, () => {
                 this.hideModel();
               });
@@ -544,5 +533,5 @@ export default class LAppARSprite {
 
   private _renderingStartDelay = 0;
 
-  private _renderingStartTime?= 0;
+  private _renderingStartTime? = 0;
 }

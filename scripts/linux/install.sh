@@ -2,7 +2,7 @@
 
 set -ue
 
-NODE_VERION=v18.7.0
+NODE_VERION=v20.11.0
 CUBISM_SDK_VERSION=4-r.5-beta.5
 
 NODE_DL_URL=https://nodejs.org/dist/$NODE_VERION/node-$NODE_VERION-linux-x64.tar.xz
