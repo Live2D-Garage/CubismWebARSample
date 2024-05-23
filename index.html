@@ -5,10 +5,11 @@ Use of this source code is governed by the MIT License.
  -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta name="robots" content="noindex">
-  <meta name="viewport"
-    content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="user-scalable=no" />
   <meta charset="utf-8">
   <meta name="google" content="notranslate" />
   <title>Cubism WebAR Sample</title>
@@ -17,11 +18,19 @@ Use of this source code is governed by the MIT License.
   <script src="./lib/ar.js/ar.min.js"></script>
   <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
 </head>
+
 <body>
-  <canvas id="main-canvas">
+  <canvas id="main-canvas" width="720px" height="1280px">
     This browser does not support the <code>&lt;canvas&gt;</code> element.
   </canvas>
-  <script src="./dist/main.bundle.js"></script>
+  <script src="./dist/main.bundle.js">
+    Module: { ALLOW_MEMORY_GROWTH: 1 }
+    Module: { ASSERTIONS: 1 }
+
+  </script>
   <div id="debug-info"></div>
+  <div id="selectbutton"></div>
+  <div id="fullscreenbutton"></div>
 </body>
+
 </html>

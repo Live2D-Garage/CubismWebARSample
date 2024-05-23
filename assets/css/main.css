@@ -15,8 +15,24 @@ html, body {
   font-weight: bold;
 }
 
+body{
+  background-color: black;
+}
+
 p, span, ul {
   margin: 0;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+}
+
+button{ 
+  z-index: 10;
+  border-radius:1px;
+  border: 3px;
+  padding: 7px;
+  margin: 5px;
+}
+
+#main-canvas {
+  object-fit: contain;
 }

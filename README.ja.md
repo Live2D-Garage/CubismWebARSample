@@ -8,6 +8,8 @@ Web ブラウザ上で動作するため、アプリケーションのインス�
 モデルデータを差し替えるだけでお手持ちの Live2D モデルを表示することができます、またオリジナルの AR マーカーを利用することも可能です。
 AR マーカーを名刺やポスターなどに埋め込むことで、Live2D モデルのプロモーションを行なうことができます。
 
+さらに、マーカーを利用しないツーショットモードも用意しており、Live2D モデルと一緒に写真を撮ることができます。
+
 [Live2D Cubism SDK for Web]: https://www.live2d.com/download/cubism-sdk/
 [AR.js]: https://github.com/jeromeetienne/AR.js/
 [Live2D Cubism Editor]: https://www.live2d.com/
@@ -27,6 +29,14 @@ Read this in other languages: [English](README.md), [日本語](README.ja.md).
 | --- | --- | --- | --- |
 | OS | Android 7.0 以上 | iOS 11 以上 | Windows または macOS |
 | ブラウザ | Google Chrome | Safari | Google Chrome |
+
+
+## 開発環境
+
+| Name | Version |
+| --- | --- |
+| Cubism SDK | Cubism 5 SDK for Web R1 beta4 [5-r.1-beta.4] |
+| Node.js | 20.11.0 |
 
 
 ## ドキュメント
@@ -66,3 +76,19 @@ Read this in other languages: [English](README.md), [日本語](README.ja.md).
 | Name | Version |
 | --- | --- |
 | [AR.js] | 2.0.8 |
+
+
+## プロジェクトへの貢献
+
+### フォークとプルリクエスト
+
+修正、改善、さらには新機能をもたらすかどうかにかかわらず、プルリクエストに感謝します。メインリポジトリを可能な限りクリーンに保つために、必要に応じて個人用フォークと機能ブランチを作成してください。
+
+
+
+## フォーラム
+
+ご不明な点がございましたら、公式のLive2Dフォーラムに参加して、他のユーザーと話し合ってください。
+
+- [Live2D 公式クリエイターズフォーラム](https://creatorsforum.live2d.com/)
+- [Live2D Creators Forum(English)](https://community.live2d.com/)
