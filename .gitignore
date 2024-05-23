@@ -3,6 +3,7 @@
 /.node/
 /.temp/
 /node_modules/
+.eslintcache
 /dist/
 cert.pem
 key.pem

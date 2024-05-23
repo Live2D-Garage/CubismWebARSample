@@ -6,18 +6,20 @@
 
 export interface ModelOption {
   // Model name
-  name: string
+  name: string;
   // Position offset of model to draw on the mesh
-  canvasOffset?: { x?: number; y?: number }
+  canvasOffset?: { x?: number; y?: number };
   // Scale of mesh
-  scale?: number
+  scale?: number;
   // Angle offset of mesh to AR marker
-  rotation?: { x?: number; y?: number; z?: number }
+  rotation?: { x?: number; y?: number; z?: number };
   // Position offset of mesh to AR marker
-  position?: { x?: number; y?: number; z?: number }
+  position?: { x?: number; y?: number; z?: number };
   // Whether to draw mesh in front of the camera
-  billboarding?: boolean
+  billboarding?: boolean;
   // Information of hit judgment
   // Key: Hit area ID, Value: Motion group name
-  hitInfo?: { [key: string]: string }
+  hitInfo?: { [key: string]: string };
+  //Manage model breathing animation
+  enablebreathing?: boolean;
 }

@@ -1,8 +1,8 @@
 @echo off
 setlocal
 
-set NODE_VERION=v12.13.1
-set CUBISM_SDK_VERSION=4-beta.2
+set NODE_VERION=v20.11.0
+set CUBISM_SDK_VERSION=5-r.1-beta.4
 
 set NODE_DL_URL=https://nodejs.org/dist/%NODE_VERION%/node-%NODE_VERION%-win-x64.zip
 set SDK_DL_URL=https://cubism.live2d.com/sdk-web/bin/CubismSdkForWeb-%CUBISM_SDK_VERSION%.zip

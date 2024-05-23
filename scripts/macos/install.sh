@@ -2,8 +2,8 @@
 
 set -ue
 
-NODE_VERION=v12.13.1
-CUBISM_SDK_VERSION=4-beta.2
+NODE_VERION=v20.11.0
+CUBISM_SDK_VERSION=5-r.1-beta.4
 
 NODE_DL_URL=https://nodejs.org/dist/$NODE_VERION/node-$NODE_VERION-darwin-x64.tar.gz
 SDK_DL_URL=https://cubism.live2d.com/sdk-web/bin/CubismSdkForWeb-$CUBISM_SDK_VERSION.zip

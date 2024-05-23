@@ -4,6 +4,7 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
+    "sourceMap": true,
     "newLine": "LF",
     "removeComments": true,
     "moduleResolution": "node",
@@ -12,7 +13,8 @@
     "module": "esnext"
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "./CubismWebSamples/Core/*.ts"
   ],
   "exclude": [
     "node_modules"

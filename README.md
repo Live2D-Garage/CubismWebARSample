@@ -7,6 +7,8 @@ This application runs on a web browser. This makes it easy to enjoy AR content i
 You can display your Live2D models just by replacing model data, and you can use your own AR marker.
 You can promote your Live2D models by embedding AR marker in business cards or posters.
 
+Additionally, in the two-shot mode, which does not use markers, you can take pictures with the Live2D model.
+
 [Live2D Cubism SDK for Web]: https://www.live2d.com/download/cubism-sdk/
 [AR.js]: https://github.com/jeromeetienne/AR.js/
 [Live2D Cubism Editor]: https://www.live2d.com/
@@ -27,6 +29,14 @@ See [LICENSE.md](LICENSE.md).
 | --- | --- | --- | --- |
 | OS | Android 7.0 or higher | iOS 11 or higher | Windows or macOS |
 | Browser | Google Chrome | Safari | Google Chrome |
+
+
+## Development environment
+
+| Name | Version |
+| --- | --- |
+| Cubism SDK | Cubism 5 SDK for Web R1 beta4 [5-r.1-beta.4] |
+| Node.js | 20.11.0 |
 
 
 ## Documents (Japanese)
@@ -66,3 +76,18 @@ See [LICENSE.md](LICENSE.md).
 | Name | Version |
 | --- | --- |
 | [AR.js] | 2.0.8 |
+
+
+## Project Contributions
+
+### Forks and Pull Requests
+
+We value and appreciate all the submitted pull requests, regardless of whether they contain fixes, improvements, or new features. To maintain a clean main repository, please create your own forks and feature branches as necessary.
+
+
+## Forum
+
+If you have any questions, please visit the official Live2D forum and discuss them with other users.
+
+- [Live2D Creators Forum](https://community.live2d.com/)
+- [Live2D 公式クリエイターズフォーラム (Japanese)](https://creatorsforum.live2d.com/)
